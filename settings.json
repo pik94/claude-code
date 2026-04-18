@@ -1,0 +1,48 @@
+{
+  "env": {
+    "VISUAL": "gedit",
+    "EDITOR": "gedit"
+  },
+  "permissions": {
+    "allow": [
+      "Bash(git add *)",
+      "Bash(git status)",
+      "Bash(git diff)",
+      "Bash(git commit *)",
+      "Bash(git push)",
+      "Bash(git pull)",
+      "Bash(uv:*)",
+      "Bash(make:*)",
+      "Bash(docker:*)",
+      "Bash(docker compose:*)",
+      "Bash(python3:*)",
+      "Bash(pip:*)",
+      "Bash(npm:*)",
+      "Bash(node:*)",
+      "Bash(ls:*)",
+      "Bash(cat:*)",
+      "Bash(find:*)",
+      "Bash(grep:*)",
+      "Agent"
+    ],
+    "defaultMode": "auto"
+  },
+  "skipAutoPermissionPrompt": true,
+  "terminal": {
+    "timeout": 60000,
+    "maxOutputLines": 5000,
+    "captureStderr": true
+  },
+  "safety": {
+    "warnOnDestructive": true,
+    "confirmBefore": [
+      "Bash(rm:*)",
+      "Bash(docker rm:*)",
+      "Bash(git reset:*)"
+    ]
+  },
+  "logging": {
+    "enabled": true,
+    "level": "info"
+  }
+}

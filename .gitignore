@@ -1,0 +1,34 @@
+session-env/# Ignore everything by default
+*
+ 
+# --- KEEP: Global instructions & agents ---
+!CLAUDE.md
+!commands/
+!commands/**
+!agents/
+!agents/**
+!skills/
+!skills/**
+!.gitignore
+ 
+# --- KEEP: Settings ---
+!settings.json
+ 
+# --- KEEP: MCP servers config (lives one level up, ~/.claude.json) ---
+# Track it separately in the repo root as claude.json
+!claude.json
+ 
+# --- EXCLUDE: Secrets & credentials ---
+.credentials.json
+settings.local.json
+ 
+# --- EXCLUDE: Machine-specific & generated data ---
+statsig/
+projects/
+ide/
+shell-snapshots/
+file-history/
+debug/
+session-env/
+history.jsonl
+config.json
