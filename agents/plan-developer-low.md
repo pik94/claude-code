@@ -6,6 +6,13 @@ color: blue
 tools: Agent, Write, Read, Bash
 ---
 
-See instructions: ~/.claude/commands/_plan-developer.md
+**Read your instructions before doing anything else.**
+
+Use the Read tool now:
+```
+~/.claude/commands/_plan-developer.md
+```
+
+Do not start any other work until you have read that file.
 
 $ARGUMENTS

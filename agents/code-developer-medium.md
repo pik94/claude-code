@@ -6,6 +6,13 @@ color: blue
 tools: Agent, Bash, Write, Read, Edit, Glob, Grep, WebFetch, WebSearch
 ---
 
-See instructions: ~/.claude/commands/_code-developer.md
+**Read your instructions before doing anything else.**
+
+Use the Read tool now:
+```
+~/.claude/commands/_code-developer.md
+```
+
+Do not start any other work until you have read that file.
 
 $ARGUMENTS

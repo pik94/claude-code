@@ -67,3 +67,28 @@ Commands without a `_` prefix are user-facing (become `/command-name`). Files wi
 - Orchestrators resolve all optional args to their defaults at the very top before invoking any subagent.
 - Output directories for each pipeline stage must be distinct (never share `plan-dir` and dev output dir).
 - Pipeline output files follow the pattern: `{dir}/plan_v{n}.md`, `{dir}/review_v{n}.md`, `{dir}/plan_final.md`.
+
+## Agent instruction authoring
+
+Agent body (after frontmatter) must begin with an explicit mandatory Read directive, then `$ARGUMENTS`:
+
+```
+**Read your instructions before doing anything else.**
+
+Use the Read tool now:
+`~/.claude/commands/_<name>.md`
+
+Do not start any other work until you have read that file.
+
+$ARGUMENTS
+```
+
+The `commands/_*.md` files are the single source of truth for instruction prose and are shared across agent tiers. To update instructions for a group of agents, edit only the `_*.md` file — all agents that reference it pick up the change automatically via the Read tool.
+
+## Orchestrators must run as slash commands, not as agents
+
+**The Agent tool is not available to subagents.** When Claude Code spawns a subagent, the subagent cannot itself spawn further subagents via the Agent tool — even if `tools: Agent` is listed in its frontmatter. This means `plan-manager` and `code-manager` cannot function as subagents: they would need to use the Agent tool to spawn plan-developer/reviewer/etc., but that tool is unavailable to them.
+
+**Rule:** Orchestrators (`plan-manager`, `code-manager`) must run as **slash commands** in the main session, which does have the Agent tool. Their slash command files (`commands/plan-manager.md`, `commands/code-manager.md`) contain three steps: parse args → Read the `_*.md` instruction file → execute the pipeline. Never spawn plan-manager or code-manager as a subagent from another agent.
+
+Leaf agents (`plan-developer`, `plan-reviewer`, `code-developer`, `code-reviewer`, `code-tester`) are proper subagents — they only need Read/Write/Bash to do their work.

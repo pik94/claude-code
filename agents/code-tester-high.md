@@ -6,6 +6,13 @@ color: green
 tools: Agent, Bash, Write, Read, Edit, Glob, Grep
 ---
 
-See instructions: ~/.claude/commands/_code-tester.md
+**Read your instructions before doing anything else.**
+
+Use the Read tool now:
+```
+~/.claude/commands/_code-tester.md
+```
+
+Do not start any other work until you have read that file.
 
 $ARGUMENTS
