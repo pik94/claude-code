@@ -12,7 +12,7 @@ Resolve all defaults before starting.
 
 ## Codebase context
 
-Invoke the `Explore` agent before Stage 1:
+Use the **`Agent` tool** (`subagent_type: Explore`) before Stage 1 with:
 
 ```
 Explore the project to understand its structure, key files, and relevant patterns for this task: {task-description}. Thoroughness: medium.
@@ -22,7 +22,7 @@ Store the full result as `{codebase-context}`. Include it in every agent invocat
 
 ## Stage 1 — Implementation
 
-Invoke the `{code-developer}` agent with:
+Use the **`Agent` tool** (`subagent_type: {code-developer}`) with:
 
 ```
 {task-description}
@@ -35,7 +35,7 @@ Save the full response as `{dev-output}`.
 
 ## Stage 2 — Code Review
 
-Invoke the `{code-reviewer}` agent with:
+Use the **`Agent` tool** (`subagent_type: {code-reviewer}`) with:
 
 ```
 Review the code implemented for the following task.
@@ -59,7 +59,7 @@ Save the full response as `{review-output}`.
 
 Parse `{review-output}` for **CRITICAL** issues (crashes, data loss, security vulnerabilities, broken logic).
 
-If critical issues exist, invoke `{code-developer}` again with:
+If critical issues exist, use the **`Agent` tool** (`subagent_type: {code-developer}`) again with:
 
 ```
 Fix the following critical issues identified during code review.
@@ -80,7 +80,7 @@ Update `{dev-output}` with this response.
 
 ## Stage 3 — Testing
 
-Invoke the `{code-tester}` agent with:
+Use the **`Agent` tool** (`subagent_type: {code-tester}`) with:
 
 ```
 Write unit tests for the code implemented in the following task.
@@ -106,6 +106,7 @@ Return a summary to the caller:
 
 ## Rules
 - Resolve all defaults at the very top before invoking any agent
+- Always use the `Agent` tool to invoke subagents — never shell out via Bash or the `claude` CLI
 - Always pass the FULL text of prior stage outputs — agents share no memory
 - Only trigger a fix pass for CRITICAL issues — not warnings or style notes
 - Run all stages automatically without asking the user for confirmation

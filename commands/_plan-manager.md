@@ -19,7 +19,7 @@ mkdir -p {plan-dir}
 
 ## Codebase context
 
-Invoke the `Explore` agent before the planning loop:
+Use the **`Agent` tool** (`subagent_type: Explore`) before the planning loop with:
 
 ```
 Explore the project to understand its structure, key files, and relevant patterns for this task: {task-description}. Thoroughness: medium.
@@ -37,18 +37,18 @@ Build the prompt for the agent:
 - Always include: the full task description, `{codebase-context}` as "Codebase context", and `Write your plan to: {plan-dir}/plan_v{i}.md`
 - If `i > 1`, also include the full text of `{plan-dir}/plan_v{i-1}.md` as "Previous plan" and `{plan-dir}/review_v{i-1}.md` as "Reviewer feedback"
 
-Invoke the `{plan-developer}` agent with this prompt. The agent writes its plan to `{plan-dir}/plan_v{i}.md`.
+Use the **`Agent` tool** (`subagent_type: {plan-developer}`) with this prompt. Do NOT invoke agents via Bash or the claude CLI. The agent writes its plan to `{plan-dir}/plan_v{i}.md`.
 
 ### Step 2 — Invoke plan-reviewer
 
 Build the prompt for the agent:
 - Include: the full task description, `{codebase-context}` as "Codebase context", the full text of `{plan-dir}/plan_v{i}.md` as "Plan to review", and `Write your review to: {plan-dir}/review_v{i}.md`
 
-Invoke the `{plan-reviewer}` agent with this prompt. The agent writes its review to `{plan-dir}/review_v{i}.md`.
+Use the **`Agent` tool** (`subagent_type: {plan-reviewer}`) with this prompt. Do NOT invoke agents via Bash or the claude CLI. The agent writes its review to `{plan-dir}/review_v{i}.md`.
 
 ## Final plan
 
-After the loop completes, invoke `{plan-developer}` one final time with:
+After the loop completes, use the **`Agent` tool** (`subagent_type: {plan-developer}`) one final time with:
 - The full task description
 - `{codebase-context}` as "Codebase context"
 - Full text of `{plan-dir}/plan_v{plan-iterations}.md` as "Previous plan"
@@ -79,6 +79,7 @@ Return the content of `{plan-dir}/plan_final.md` to the caller.
 
 ## Rules
 - Resolve all defaults at the very top before invoking any agent
+- Always use the `Agent` tool to invoke subagents — never shell out via Bash or the `claude` CLI
 - Always read plan and review files from disk before passing to agents — never rely on return text alone
 - Always pass the FULL text of previous plan and review files — never summarize
 - Run all iterations automatically without asking the user for confirmation
