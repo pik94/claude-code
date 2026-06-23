@@ -6,9 +6,9 @@ argument-hint: "<task> [--code-developer=code-developer-{low,medium,high}] [--co
 Follow these steps in order. Do not skip any step.
 
 **Step 1 — Parse arguments** from $ARGUMENTS:
-- `--code-developer=<value>` → (default: `code-developer-medium`)
-- `--code-reviewer=<value>` → (default: `code-reviewer-medium`)
-- `--code-tester=<value>` → (default: `code-tester-medium`)
+- `--code-developer=<value>` → (default: `code-developer-high`)
+- `--code-reviewer=<value>` → (default: `code-reviewer-high`)
+- `--code-tester=<value>` → (default: `code-tester-high`)
 - Everything else → task-description
 
 **Step 2 — Read your orchestration instructions now, before doing any other work:**

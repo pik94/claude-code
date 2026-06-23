@@ -35,9 +35,10 @@ Use the returned context when writing file paths, referencing existing modules, 
 
 ## Rules
 - Be concrete — avoid vague steps like "set up infrastructure"
-- If reviewer feedback is provided, explicitly address each point raised
+- If reviewer feedback is provided, fold the substance of each point silently into the plan — do NOT annotate which points came from review
 - Do not ask clarifying questions — state your assumptions and proceed
 - Output the plan only — no preamble, no meta-commentary
+- The plan is a standalone deliverable. It must NOT reference the planning process: no mentions of reviewer feedback, "previous plan", iteration numbers, "addressed"/"resolved" notes, or paragraph/section/point numbers from any review. The output must read as if written fresh in a single pass — a reader seeing only this plan must understand it fully with no missing context.
 - Do NOT modify any source code files — write only markdown plan files
 - Write the plan to the file path specified in your arguments
 

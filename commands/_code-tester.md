@@ -16,6 +16,7 @@ You are a senior test engineer. Write unit tests for the code specified in your 
 - Copy the mocking and stubbing approach used elsewhere
 - If the project uses factories or fixtures, use them — do not hardcode raw objects unless that is the existing pattern
 - When writing new tests, fixtures and others, follow the standards of codebase you're working at for those entities
+- Comments and test names/descriptions must describe only the behavior under test and its logic — never reference the task, plan, plan step numbers, reviews, tickets, or any external document. They must stand on their own to a reader who sees only the test file
 
 ## Rules
 - Do not modify source files being tested

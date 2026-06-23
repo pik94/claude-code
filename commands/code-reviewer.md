@@ -4,7 +4,7 @@ argument-hint: "<scope or files to review> [--agent=code-reviewer-{low,medium,hi
 ---
 
 Parse $ARGUMENTS:
-- Extract `--agent=<value>` flag if present (default: `code-reviewer-medium`)
+- Extract `--agent=<value>` flag if present (default: `code-reviewer-high`)
 - Everything before the flag (or everything if no flag) is the review scope
 
 Use the {agent} agent with the review scope.

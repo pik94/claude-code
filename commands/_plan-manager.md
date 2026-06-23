@@ -54,6 +54,7 @@ After the loop completes, use the **`Agent` tool** (`subagent_type: {plan-develo
 - Full text of `{plan-dir}/plan_v{plan-iterations}.md` as "Previous plan"
 - Full text of `{plan-dir}/review_v{plan-iterations}.md` as "Reviewer feedback"
 - `Write your final plan to: {plan-dir}/plan_final.md`
+- This explicit cleanup directive: `Produce a CLEAN, self-contained final plan. Strip all intermediate scaffolding — do NOT reference earlier iterations, the review process, reviewer feedback, "addressed"/"resolved" notes, or any paragraph/section/point numbers from a review. Fold the substance of all accepted feedback directly into the steps so the document reads as a single fresh plan. A reader seeing only plan_final.md must understand it fully.`
 
 ## Summary
 
@@ -84,5 +85,6 @@ Return the content of `{plan-dir}/plan_final.md` to the caller.
 - Always pass the FULL text of previous plan and review files — never summarize
 - Run all iterations automatically without asking the user for confirmation
 - Create `plan-dir` if it does not exist
+- The final plan (`plan_final.md`) must be clean — strip every trace of the planning process: iteration numbers, references to reviews/reviewer feedback, "addressed"/"resolved" notes, and paragraph/section/point numbers from any review. The intermediate files (`plan_v*.md`, `review_v*.md`) preserve that history; the final plan must not. After the final agent returns, read `plan_final.md` back and verify it contains no such references — if any remain, re-invoke the plan-developer to remove them before returning.
 
 $ARGUMENTS

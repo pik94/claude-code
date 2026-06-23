@@ -1,7 +1,7 @@
 {
   "env": {
-    "VISUAL": "gedit",
-    "EDITOR": "gedit"
+    "EDITOR": "gedit",
+    "VISUAL": "gedit"
   },
   "permissions": {
     "allow": [
@@ -27,22 +27,90 @@
     ],
     "defaultMode": "auto"
   },
+  "model": "opus[1m]",
+  "hooks": {
+    "PermissionRequest": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash '/home/me/.claude/hooks/herdr-agent-state.sh' blocked",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash '/home/me/.claude/hooks/herdr-agent-state.sh' working",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash '/home/me/.claude/hooks/herdr-agent-state.sh' release",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash '/home/me/.claude/hooks/herdr-agent-state.sh' idle",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash '/home/me/.claude/hooks/herdr-agent-state.sh' working",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  },
+  "enabledPlugins": {
+    "stripe@claude-plugins-official": true
+  },
+  "effortLevel": "xhigh",
   "skipAutoPermissionPrompt": true,
-  "terminal": {
-    "timeout": 60000,
-    "maxOutputLines": 5000,
-    "captureStderr": true
+  "logging": {
+    "enabled": true,
+    "level": "info"
   },
   "safety": {
-    "warnOnDestructive": true,
     "confirmBefore": [
       "Bash(rm:*)",
       "Bash(docker rm:*)",
       "Bash(git reset:*)"
-    ]
+    ],
+    "warnOnDestructive": true
   },
-  "logging": {
-    "enabled": true,
-    "level": "info"
-  }
+  "terminal": {
+    "captureStderr": true,
+    "maxOutputLines": 5000,
+    "timeout": 60000
+  },
+  "tui": "fullscreen"
 }
