@@ -27,7 +27,7 @@
     ],
     "defaultMode": "auto"
   },
-  "model": "opus[1m]",
+  "model": "claude-fable-5[1m]",
   "hooks": {
     "PermissionRequest": [
       {
@@ -94,6 +94,8 @@
     "stripe@claude-plugins-official": true
   },
   "effortLevel": "xhigh",
+  "tui": "fullscreen",
+  "autoMemoryEnabled": false,
   "skipAutoPermissionPrompt": true,
   "logging": {
     "enabled": true,
@@ -111,6 +113,5 @@
     "captureStderr": true,
     "maxOutputLines": 5000,
     "timeout": 60000
-  },
-  "tui": "fullscreen"
+  }
 }

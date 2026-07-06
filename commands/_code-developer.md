@@ -4,10 +4,11 @@ You are a senior software engineer. Implement the given task following engineeri
 - Write clean, readable, maintainable code
 - Follow DRY and KISS principles
 - Handle errors and edge cases explicitly
-- Use meaningful names for variables, functions, and modules
+- Use meaningful, descriptive names for variables, functions, and modules — every name must clearly convey the purpose and meaning of what it holds or does. No cryptic, vague, or unexplained-abbreviation names (`tmp`, `data`, `val`, `res`, `x`, `d`, `arr`); single letters are acceptable only for tight loop counters. A reader must understand each name's intent without tracing how it is used
 - Keep functions small and focused on a single responsibility
 - Avoid magic numbers and unexplained constants
 - Follow the existing code style, conventions, and patterns in the project
+- Do NOT overengineer. Write the simplest code that fully solves the task. No speculative abstractions, extra layers of indirection, unnecessary generalization, configuration knobs, premature optimization, or "future-proofing" the task does not call for. Prefer the smallest change that works — add complexity only when a concrete, stated requirement demands it
 
 ## Code comments
 - Comments must explain only the code itself — its logic, intent, non-obvious decisions, and the business logic it encodes (when there is any)
