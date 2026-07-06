@@ -13,9 +13,9 @@ Parse $ARGUMENTS for these fields (apply defaults for any not provided):
 - `--plan-reviewer=<value>` → plan reviewer agent (default: `plan-reviewer-high`)
 - `--plan-dir=<value>` → directory for plan files (default: `./plans`)
 - `--plan-iterations=<value>` → number of plan→review cycles (default: `3`)
-- `--code-developer=<value>` → implementation agent (default: `code-developer-medium`)
-- `--code-reviewer=<value>` → code review agent (default: `code-reviewer-medium`)
-- `--code-tester=<value>` → test writing agent (default: `code-tester-medium`)
+- `--code-developer=<value>` → implementation agent (default: `code-developer-high`)
+- `--code-reviewer=<value>` → code review agent (default: `code-reviewer-high`)
+- `--code-tester=<value>` → test writing agent (default: `code-tester-high`)
 - Everything else → task-description
 
 Resolve all defaults before starting.
@@ -72,3 +72,5 @@ Return a combined summary:
 - Always read `{plan-dir}/plan_final.md` from disk — do not rely on plan-manager's return text
 - Pass the FULL plan content to code-manager — never summarize or truncate it
 - Run both phases automatically without asking the user for confirmation
+- The final plan (`plan_final.md`) must be clean and self-contained — no references to iterations, reviews, reviewer feedback, or paragraph/section/point numbers. plan-manager is responsible for stripping this; verify it before passing the plan onward
+- Code and test comments produced in Phase 2 must reference only the code and its (business) logic — never the task, the plan, plan step numbers, or reviews

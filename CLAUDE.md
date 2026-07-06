@@ -46,9 +46,9 @@ Commands without a `_` prefix are user-facing (become `/command-name`). Files wi
 
 | Command | Delegates to | Key flags |
 |---|---|---|
-| `/code-developer` | `code-developer-medium` | `--agent=code-developer-{low,medium,high}` |
-| `/code-reviewer` | `code-reviewer-medium` | `--agent=code-reviewer-{low,medium,high}` |
-| `/code-tester` | `code-tester-medium` | `--agent=code-tester-{low,medium,high}` |
+| `/code-developer` | `code-developer-high` | `--agent=code-developer-{low,medium,high}` |
+| `/code-reviewer` | `code-reviewer-high` | `--agent=code-reviewer-{low,medium,high}` |
+| `/code-tester` | `code-tester-high` | `--agent=code-tester-{low,medium,high}` |
 | `/plan-developer` | `plan-developer-medium` | `--agent=plan-developer-{low,medium,high}` |
 | `/plan-reviewer` | `plan-reviewer-medium` | `--agent=plan-reviewer-{low,medium,high}` |
 | `/code-manager` | `code-manager` | `--code-developer=`, `--code-reviewer=`, `--code-tester=` |

@@ -110,5 +110,6 @@ Return a summary to the caller:
 - Always pass the FULL text of prior stage outputs — agents share no memory
 - Only trigger a fix pass for CRITICAL issues — not warnings or style notes
 - Run all stages automatically without asking the user for confirmation
+- Code and test comments must reference only the code and its (business) logic — never the task, plan, plan step numbers, or reviews. When invoking the reviewer, ask it to flag any comment that points to an external document so the developer can reword it
 
 $ARGUMENTS
