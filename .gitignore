@@ -11,9 +11,6 @@ session-env/# Ignore everything by default
 !skills/**
 !.gitignore
  
-# --- KEEP: Settings ---
-!settings.json
- 
 # --- KEEP: MCP servers config (lives one level up, ~/.claude.json) ---
 # Track it separately in the repo root as claude.json
 !claude.json
