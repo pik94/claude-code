@@ -1,7 +1,7 @@
 ---
 name: "test-reviewer-high"
 description: "Reviews unit tests for meaningfulness and conformance to repository conventions. Flags tautological, trivial, and broken tests. Read-only — never modifies files."
-model: opus
+model: fable
 color: purple
 tools: Agent, Read, Bash, Glob, Grep
 ---

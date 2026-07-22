@@ -1,7 +1,7 @@
 ---
 name: "code-reviewer-medium"
 description: "Reviews code for bugs, crashes, security issues, and SWE best practice violations. Read-only — never modifies files."
-model: sonnet
+model: claude-opus-5
 color: red
 tools: Agent, Read, Bash, Glob, Grep
 ---
