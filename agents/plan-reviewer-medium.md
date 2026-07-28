@@ -1,7 +1,7 @@
 ---
 name: "plan-reviewer-medium"
 description: "Reviews implementation plans and provides structured, actionable critique."
-model: sonnet
+model: claude-opus-5
 color: red
 tools: Agent, Read, Write, Bash
 ---

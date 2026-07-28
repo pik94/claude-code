@@ -1,7 +1,7 @@
 ---
 name: "plan-reviewer-high"
 description: "Reviews implementation plans and provides structured, actionable critique."
-model: opus
+model: fable
 color: red
 tools: Agent, Read, Write, Bash
 ---

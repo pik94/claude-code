@@ -1,7 +1,7 @@
 ---
 name: "bug-verifier"
 description: "Investigates a reported bug to determine if it is real or a false alarm. Reads code, traces execution paths, searches for related tests and docs, and delivers a verdict with evidence."
-model: opus
+model: claude-opus-5
 color: red
 tools: Agent, Read, Bash, Glob, Grep, WebFetch, WebSearch
 ---

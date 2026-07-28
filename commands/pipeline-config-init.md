@@ -13,14 +13,14 @@ Create a pipeline config file pre-filled with default values. Follow these steps
 
 ```json
 {
-  "plan-developer": "plan-developer-high",
-  "plan-reviewer": "plan-reviewer-high",
+  "plan-developer": "plan-developer-medium",
+  "plan-reviewer": "plan-reviewer-medium",
   "plan-dir": "./plans",
   "plan-iterations": 3,
-  "code-developer": "code-developer-high",
-  "code-reviewer": "code-reviewer-high",
-  "code-tester": "code-tester-high",
-  "test-reviewer": "test-reviewer-high",
+  "code-developer": "code-developer-medium",
+  "code-reviewer": "code-reviewer-medium",
+  "code-tester": "code-tester-medium",
+  "test-reviewer": "test-reviewer-medium",
   "reviews": ["correctness", "security", "maintainability"],
   "skip-review": false,
   "skip-tests": false,
