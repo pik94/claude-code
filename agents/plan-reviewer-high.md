@@ -2,6 +2,7 @@
 name: "plan-reviewer-high"
 description: "Reviews implementation plans and provides structured, actionable critique."
 model: fable
+effort: max
 color: red
 tools: Agent, Read, Write, Bash
 ---

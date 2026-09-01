@@ -2,6 +2,7 @@
 name: "code-developer-high"
 description: "Implements tasks following SWE best practices. Writes production-quality code, runs linters and tests, and stages new files with git add."
 model: fable
+effort: high
 color: blue
 tools: Agent, Bash, Write, Read, Edit, Glob, Grep, WebFetch, WebSearch
 ---

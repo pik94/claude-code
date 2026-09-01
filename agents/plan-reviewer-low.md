@@ -2,6 +2,7 @@
 name: "plan-reviewer-low"
 description: "Reviews implementation plans and provides structured, actionable critique."
 model: sonnet
+effort: max
 color: red
 tools: Agent, Read, Write, Bash
 ---

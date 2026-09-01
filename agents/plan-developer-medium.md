@@ -2,6 +2,7 @@
 name: "plan-developer-medium"
 description: "Creates structured implementation plans. Use when planning is needed before coding."
 model: claude-opus-5
+effort: max
 color: blue
 tools: Agent, Write, Read, Bash
 ---

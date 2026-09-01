@@ -2,6 +2,7 @@
 name: "plan-developer-low"
 description: "Creates structured implementation plans. Use when planning is needed before coding."
 model: sonnet
+effort: max
 color: blue
 tools: Agent, Write, Read, Bash
 ---
