@@ -1,7 +1,7 @@
 ---
 name: "plan-developer-high"
 description: "Creates structured implementation plans. Use when planning is needed before coding."
-model: fable
+model: claude-fable-5-1
 effort: max
 color: blue
 tools: Agent, Write, Read, Bash

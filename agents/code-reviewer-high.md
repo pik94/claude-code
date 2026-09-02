@@ -1,7 +1,7 @@
 ---
 name: "code-reviewer-high"
 description: "Reviews code for bugs, crashes, security issues, and SWE best practice violations. Read-only — never modifies files."
-model: fable
+model: claude-fable-5-1
 effort: high
 color: red
 tools: Agent, Read, Bash, Glob, Grep
