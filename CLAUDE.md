@@ -17,7 +17,7 @@ The `.gitignore` excludes secrets (`.credentials.json`, `settings.local.json`) a
 
 ## Agent architecture
 
-Agents come in three tiers (`-low` = haiku, `-medium` = sonnet, `-high` = opus) plus orchestrators:
+Agents come in three tiers (`-low` = sonnet, `-medium` = opus `claude-opus-5-5`, `-high` = fable `claude-fable-5-1`) plus orchestrators:
 
 ```
 Explore                  — fast codebase search (Haiku); finds files, searches code

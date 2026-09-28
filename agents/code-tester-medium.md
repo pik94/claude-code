@@ -1,7 +1,7 @@
 ---
 name: "code-tester-medium"
 description: "Writes unit tests following existing project patterns. Covers happy paths, edge cases, and error conditions. Stages new test files with git add."
-model: claude-opus-5
+model: claude-opus-5-5
 effort: high
 color: green
 tools: Agent, Bash, Write, Read, Edit, Glob, Grep

@@ -1,7 +1,7 @@
 ---
 name: "test-reviewer-medium"
 description: "Reviews unit tests for meaningfulness and conformance to repository conventions. Flags tautological, trivial, and broken tests. Read-only — never modifies files."
-model: claude-opus-5
+model: claude-opus-5-5
 color: purple
 tools: Agent, Read, Bash, Glob, Grep
 ---
