@@ -7,10 +7,10 @@ Follow these steps in order. Do not skip any step.
 
 **Step 1 — Parse arguments** from $ARGUMENTS:
 - `--config=<value>` → path to a JSON config file (optional)
-- `--code-developer=<value>` → (default: `code-developer-high`)
-- `--code-reviewer=<value>` → (default: `code-reviewer-high`)
-- `--code-tester=<value>` → (default: `code-tester-high`)
-- `--test-reviewer=<value>` → (default: `test-reviewer-high`)
+- `--code-developer=<value>` → (default: `code-developer-medium`)
+- `--code-reviewer=<value>` → (default: `code-reviewer-medium`)
+- `--code-tester=<value>` → (default: `code-tester-medium`)
+- `--test-reviewer=<value>` → (default: `test-reviewer-medium`)
 - `--reviews=<value>` → comma-separated review types (default: `correctness,security,maintainability`; valid: `correctness`, `security`, `maintainability`, `performance`, `api-contract`, `docs`; `none` disables review)
 - `--skip-review` → skip the review stage (default: false)
 - `--skip-tests` → skip the testing and test-review stages (default: false)
